@@ -1,4 +1,5 @@
 import axios from '../config/axios'
+import Swal from 'sweetalert2'
 
 export const startRegisterUser=(formData,props)=> {
     return (dispatch)=> {
@@ -7,7 +8,7 @@ export const startRegisterUser=(formData,props)=> {
             if(response.data._id) {
                 props.history.push('/users/login')
             } else {
-                alert('User already Exists')
+                Swal.fire('User already exists')
             }
         })
     }
@@ -18,7 +19,7 @@ export const startLoginUser=(formData,props)=> {
         axios.post('/users/login',formData)
             .then(response=> {
                 if(response.data.hasOwnProperty('errors')) {
-                    alert(response.data.message)
+                    Swal.fire('Invalid Email/Password')
                 } else {
                     const token=response.data.token
                     localStorage.setItem('authToken',token)

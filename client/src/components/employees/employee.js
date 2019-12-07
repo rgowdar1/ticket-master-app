@@ -16,7 +16,7 @@ class Employee extends React.Component {
     }
     render() {
         return (
-            <div style={{backgroundImage:"url("+"https://cdn.pixabay.com/photo/2016/04/12/22/35/watercolour-1325656__340.jpg"+")",height:"100vh"}}>
+            <div style={{backgroundImage:"url("+"https://cdn.pixabay.com/photo/2016/04/12/22/35/watercolour-1325656__340.jpg"+")"}}>
         <div className="container">
             <br/>
             <h1 className="text-center">EMPLOYEES</h1>

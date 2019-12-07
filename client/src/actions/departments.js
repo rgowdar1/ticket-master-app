@@ -81,7 +81,7 @@ export const startDeleteDepartment = (id) => {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Ticket is available can not delete department'
+                        text: 'Ticket is available for this department.'
                     })
                 }
                 else {
@@ -96,7 +96,7 @@ export const startDeleteDepartment = (id) => {
                                 Swal.fire({
                                     icon: 'error',
                                     title: 'Oops...',
-                                    text: 'Employee is available can not delete department'
+                                    text: 'Employee is available can not delete department.Remove Employees from Department'
                                 })
                             } else {
                                 Swal.fire({

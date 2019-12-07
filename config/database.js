@@ -1,11 +1,11 @@
 const mongoose=require('mongoose')
 
-const connectDB=()=>{ mongoose.connect('mongodb://localhost:27017/july-ticket-master-app',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true})
+const connectDB=()=>{ mongoose.connect(process.env.MONGODB_URI_TICKET_MASTER,{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true})
     .then(()=>{
-        console.log('database connected')
+        console.log('database connected:'+process.env.MONGODB_URI_TICKET_MASTER)
     }) 
     .catch((err)=>{
-        console.log(err)
+        console.log('error to db:'+process.env.MONGODB_URI_TICKET_MASTER)
     })        
 }
 

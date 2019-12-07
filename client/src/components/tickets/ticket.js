@@ -83,6 +83,7 @@ class Ticket extends React.Component {
                     <h3 className="text-center">PROGRESS</h3>
                     <ProgressBar animated now={(this.props.tickets.filter(ticket=>ticket.isResolved).length/this.props.tickets.length)*100} label={`${Math.round((this.props.tickets.filter(ticket=>ticket.isResolved).length/this.props.tickets.length)*100)}%`} />
                     <br/><br/>
+                    <h1 className="text-center">STATISTICS</h1><br/><br/>
                     <div className="row">
                         <div className="col-md-6">
                         {this.props.tickets.length !== 0 && <PieChart tickets={this.props.tickets} />}
@@ -91,7 +92,7 @@ class Ticket extends React.Component {
                         {this.props.tickets.length !== 0 && <BarChart tickets={this.props.tickets} />}
                         </div>
                     </div>
-                </div>
+                </div><br/><br/>
             </div>
         )
     }

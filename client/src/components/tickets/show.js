@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import axios from '../../config/axios'
 import {Link} from 'react-router-dom'
 import { Card,Button } from 'react-bootstrap'
 import { startSetSingleTicket } from '../../actions/singleTicket'
