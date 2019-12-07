@@ -29,7 +29,7 @@ function App(props) {
   }
   return (
     <BrowserRouter>
-    <div>
+    <div style={{backgroundColor:'#00FFFF',height:'100vh'}}>
     {!localStorage.getItem('authToken') ? 
     (<Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#"><h1>TICKET MASTER APP</h1></Navbar.Brand> 
