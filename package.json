@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev-server": "nodemon index.js",
     "app": "concurrently \"nodemon index.js\" \"cd client && npm start\"",
     "heroku-prebuild": "npm install",
     "heroku-postbuild": "cd client && npm install && npm run build",

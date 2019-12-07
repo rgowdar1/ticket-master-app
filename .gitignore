@@ -111,6 +111,7 @@ logs
 
 node_modules
 bower_componets
+client/build
 
 *.sublime*
 
