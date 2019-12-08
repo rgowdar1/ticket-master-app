@@ -14,7 +14,33 @@ class Register extends React.Component {
             passwordAlert:''
         }
     }
-   
+   handlePassword=(e)=> {
+    var message='Must have'; 
+    var str = e.target.value
+        if(!str.match(/[a-z]/g)){
+            message+=' ,Lowercase'
+        }
+        if(!str.match(/[A-Z]/g)){
+            message+=' ,Uppercase'
+        }
+        if(!str.match(/[0-9]/g)){
+            message+=' ,Number'
+        }
+        if(!str.match(/[^a-zA-Z\d]/g)){
+            message+=' ,Special case'
+        }
+        if(str.length <= 8){
+            message+=' ,Minimum length 8'
+        }
+if (str.match(/[a-z]/g) && str.match( 
+                    /[A-Z]/g) && str.match( 
+                    /[0-9]/g) && str.match( 
+                    /[^a-zA-Z\d]/g) && str.length >= 8) {
+                message = "valid" }
+    
+   this.setState({passwordAlert:message})
+   }
+
     handleChange=(e)=>{
         this.setState({
             [e.target.name]:e.target.value
@@ -30,7 +56,6 @@ class Register extends React.Component {
         email:this.state.email,
         password:this.state.password
     }
-    console.log(formData)
     let passwd = this.state.password
         const reg = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,128}$/;
         let test = reg.test(passwd)
@@ -58,8 +83,9 @@ class Register extends React.Component {
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                 <Form.Control type="password" value={this.state.password} name="password" onChange={this.handleChange} required placeholder="Enter Password" />
-                <Form.Text>{this.state.passwordAlert}</Form.Text>
+                 <Form.Control type="password" value={this.state.password} name="password" onChange={this.handleChange} onInput={this.handlePassword} required placeholder="Enter Password" />
+                <Form.Text><span style={this.state.passwordAlert=='valid'?{color:'green'}:{color:'red'}}>{this.state.password && this.state.passwordAlert}</span>
+                    </Form.Text>
                 </Form.Group>
                 <div className="text-center"><Button variant="primary" size="lg" block  type="submit">
                     Submit
