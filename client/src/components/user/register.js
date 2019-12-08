@@ -70,7 +70,7 @@ if (str.match(/[a-z]/g) && str.match(
             <div style={{backgroundImage:"url("+"https://cdn.pixabay.com/photo/2015/01/01/23/55/telephone-586266_960_720.jpg"+")","height":600}}>
                 <div className="row">
                  <div  className="col-md-4 offset-md-8"><br/><br/>
-                 <Card style={{background:'#C0C0C0',height:'410px' ,width:'320px'}} className="shadow p-3 mb-5 rounded">
+                 <Card style={{background:'#C0C0C0',height:'450px' ,width:'320px'}} className="shadow p-3 mb-5 rounded">
                 <h1 className="text-center">REGISTER</h1>
                 <Form onSubmit={this.submitHandler}>
                 <Form.Group controlId="formBasicUser">
