@@ -3,6 +3,7 @@ import {startRegisterUser} from '../../actions/user'
 import {connect} from 'react-redux'
 import {Form,Button,Card} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 class Register extends React.Component {
     constructor() {
@@ -30,7 +31,7 @@ class Register extends React.Component {
             message+=' ,Special case'
         }
         if(str.length <= 8){
-            message+=' ,Minimum length 8'
+            message+=' ,Minimum length of 8'
         }
 if (str.match(/[a-z]/g) && str.match( 
                     /[A-Z]/g) && str.match( 
@@ -56,13 +57,10 @@ if (str.match(/[a-z]/g) && str.match(
         email:this.state.email,
         password:this.state.password
     }
-    let passwd = this.state.password
-        const reg = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,128}$/;
-        let test = reg.test(passwd)
-        if (test) {
+    if(this.state.passwordAlert=="valid") {
         this.props.dispatch(startRegisterUser(formData,{...this.props}))
         } else {
-            this.setState({passwordAlert:'password must contain upperCase,lowerCase,number and special character'})
+       Swal.fire('Password should contains Uppercase,Lowercase,special character and number with minimum length 8')
         }
     }
     render() {
