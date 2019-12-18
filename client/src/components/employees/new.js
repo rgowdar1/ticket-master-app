@@ -1,8 +1,9 @@
 import React from 'react'
 import EmployeeForm from '../employees/form'
 import { startAddEmployee } from '../../actions/employees'
+import {connect} from 'react-redux'
 
-export default class EmployeeNew extends React.Component {
+class EmployeeNew extends React.Component {
 
     submitHandler=(formData)=>{
         this.props.dispatch(startAddEmployee(formData,this.props))
@@ -15,3 +16,5 @@ export default class EmployeeNew extends React.Component {
         )
     }
 }
+
+export default connect()(EmployeeNew)
