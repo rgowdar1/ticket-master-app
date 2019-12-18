@@ -6,7 +6,7 @@ export default function Home(props) {
         <div>
         <div className="row">
             <div>
-                <img src={image1} alt="" width="1350px"/>
+                <img src={image1} alt=""/>
             </div>
         </div>
         

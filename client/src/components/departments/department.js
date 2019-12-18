@@ -23,7 +23,7 @@ class Department extends React.Component {
                 </div>
             </div><br/><br/>
                 
-                
+                {this.props.departments.length >=1 &&
                 <Table striped bordered hover variant="dark" >
                     <thead>
                         <tr>
@@ -43,7 +43,7 @@ class Department extends React.Component {
                             </tr>
                         })}
                     </tbody>
-                </Table>
+                </Table>}
          </div>  <br/><br/><br/><br/>
           </div>
         )

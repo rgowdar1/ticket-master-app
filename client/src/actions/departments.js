@@ -121,7 +121,7 @@ export const startDeleteDepartment = (id) => {
                                                     Swal.fire({
                                                         position: 'center',
                                                         icon: 'success',
-                                                        title: 'Customer deleted Successfully',
+                                                        title: 'Department deleted Successfully',
                                                         showConfirmButton: false,
                                                         timer: 1500
                                                     })
