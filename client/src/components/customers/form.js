@@ -42,7 +42,7 @@ export default class CustomerForm extends React.Component {
                  <Form.Control type="email" value={this.state.email} name="email" onChange={this.handleChange} required placeholder="Enter Email" />
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>Mobile</Form.Label>
                  <Form.Control type="text" value={this.state.mobile} name="mobile" onChange={this.handleChange} required placeholder="Enter Mobile" />
                 </Form.Group>
                 <div className="text-center"><Button variant="primary" size="lg" block  type="submit">

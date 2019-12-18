@@ -55,7 +55,7 @@ class TicketForm extends React.Component {
                     <div className="col-md-4 offset-md-4">
                     <Card style={{background:'#C0C0C0',height:'660px'}} className="shadow p-3 mb-5 rounded">
                     <Form onSubmit={this.submitHandler}>
-                    <h1>TICKET FROM</h1>
+                    <h1>TICKET FORM</h1>
                     <Form.Group controlId="formBasicCode">
                     <Form.Label>CODE:</Form.Label>
                     <Form.Control type="text" value={this.state.value} name="code" onChange={this.handleChange} placeholder="Enter Code" />
@@ -70,6 +70,7 @@ class TicketForm extends React.Component {
                     </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="formBasicDepartment">
+                    <Form.Label>DEPARTMENTS:</Form.Label>
                     <Form.Control as="select" value={this.props.department} name="department" onChange={this.handleChange}>
                     <option>SELECT HERE</option>
                     {this.props.departments.map(department=>{
